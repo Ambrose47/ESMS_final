@@ -36,10 +36,10 @@ public class AdminImpl implements AdminService {
                     return new LoginResponse("Login Failed", false);
                 }
             } else {
-                return new LoginResponse("password Not Match", false);
+                return new LoginResponse("Password Not Match", false);
             }
         }else {
-            return new LoginResponse("Email not exits", false);
+            return new LoginResponse("Username not exits", false);
         }
     }
 }

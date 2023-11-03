@@ -1,14 +1,6 @@
 server:
   port: 8888
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 1073337468049-gjlmi4hqroo5e5ddq7en13gma1lgsmru.apps.googleusercontent.com
-            client-secret: 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
-
   datasource:
    url: jdbc:postgresql://localhost:5432/ESMS2
    username: postgres
