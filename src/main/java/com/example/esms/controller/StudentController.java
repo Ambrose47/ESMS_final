@@ -53,7 +53,7 @@ public class StudentController {
                 XSSFRow row = worksheet.getRow(index);
                 Student student = new Student();
 
-                student.setStudentID(getCellValueAsString(row.getCell(0)));
+                student.setStudentId(getCellValueAsString(row.getCell(0)));
                 student.setStudentName(getCellValueAsString(row.getCell(1)));
                 student.setStudentEmail(getCellValueAsString(row.getCell(2)));
                 //student.setStudentTerm(Integer.parseInt(getCellValueAsString(row.getCell(3))));
