@@ -10,8 +10,15 @@ import lombok.Setter;
 public class Student {
 
     @Id
+    @Column(name ="id")
     private String studentId;
+    @Basic
+
+    @Column(name ="name")
     private String studentName;
+    @Basic
+
+    @Column(name ="email")
     private String studentEmail;
     //private int studentTerm;
 
