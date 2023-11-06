@@ -2,7 +2,7 @@ package com.example.esms.service;
 
 
 
-import com.example.esms.course.Course;
+import com.example.esms.entity.Course;
 import com.example.esms.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

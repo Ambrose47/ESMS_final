@@ -14,7 +14,7 @@ public class CourseStudentPK implements Serializable {
     @Column(name ="course_id")
     @Id
     private String courseId;
-    @Column(name = "Student_ID")
+    @Column(name = "student_id")
     @Id
 
     private String studentId;

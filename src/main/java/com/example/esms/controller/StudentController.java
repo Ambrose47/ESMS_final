@@ -2,7 +2,7 @@ package com.example.esms.controller;
 
 
 import com.example.esms.service.StudentService;
-import com.example.esms.student.Student;
+import com.example.esms.entity.Student;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -27,6 +27,9 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    /*@Autowired
+    private CourseStudentService courseStudentService;*/
+
     @GetMapping("/upStudent")
     public String uploadPage() {
         return "uploadStudent"; // This assumes you have an uploadStudent.html in the templates folder
@@ -37,7 +40,9 @@ public class StudentController {
         try {
             List<Student> students = parseExcelFile(file);
             studentService.saveAll(students);
-            return ResponseEntity.status(HttpStatus.OK).body("Students uploaded successfully!");
+            /*List<CourseStudent> courseStudents = parseExcelFileCourseStudent(file);
+            courseStudentService.saveAll(courseStudents);*/
+            return ResponseEntity.status(HttpStatus.OK).body("uploaded successfully!");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload students: " + e.getMessage());
         }
@@ -65,6 +70,28 @@ public class StudentController {
         workbook.close();
         return students;
     }
+
+    /*private List<CourseStudent> parseExcelFileCourseStudent(MultipartFile file) throws IOException {
+        List<CourseStudent> rooms = new ArrayList<>();
+        XSSFWorkbook workbook = new XSSFWorkbook(file.getInputStream());
+        XSSFSheet worksheet = workbook.getSheetAt(0);
+
+        for (int index = 0; index < worksheet.getPhysicalNumberOfRows(); index++) {
+            if (index > 0) {
+                XSSFRow row = worksheet.getRow(index);
+                CourseStudent room = new CourseStudent();
+
+                room.setStudentId(getCellValueAsString(row.getCell(0)));
+                room.setCourseId(getCellValueAsString(row.getCell(3)));
+
+                rooms.add(room);
+            }
+        }
+
+        workbook.close();
+        return rooms;
+    }*/
+
 
     private String getCellValueAsString(XSSFCell cell) {
         if (cell == null) {

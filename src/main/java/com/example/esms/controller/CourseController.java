@@ -2,7 +2,7 @@ package com.example.esms.controller;
 
 
 
-import com.example.esms.course.Course;
+import com.example.esms.entity.Course;
 import com.example.esms.service.CourseService;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;

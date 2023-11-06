@@ -2,9 +2,9 @@ server:
   port: 8888
 spring:
   datasource:
-   url: jdbc:postgresql://localhost:5432/ESMS
+   url: jdbc:postgresql://localhost:5432/ESMS2
    username: postgres
-   password: 1
+   password: 12345
 
   mvc:
    view:

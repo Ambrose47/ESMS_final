@@ -1,7 +1,7 @@
 package com.example.esms.repository;
 
 
-import com.example.esms.room.Room;
+import com.example.esms.entity.Room;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
