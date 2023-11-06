@@ -3,7 +3,7 @@ package com.example.esms.service;
 
 
 import com.example.esms.repository.RoomRepository;
-import com.example.esms.room.Room;
+import com.example.esms.entity.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

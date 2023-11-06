@@ -1,7 +1,7 @@
 package com.example.esms.controller;
 
 
-import com.example.esms.room.Room;
+import com.example.esms.entity.Room;
 import com.example.esms.service.RoomService;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;

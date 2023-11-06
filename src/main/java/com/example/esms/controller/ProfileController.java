@@ -38,11 +38,10 @@ public class ProfileController {
     }
 
     @GetMapping("/profileLecturer")
-    public ResponseEntity<Object> getLecturerProfileData(String email) {
-//        OAuth2User user = token.getPrincipal();
-//        String email = user.getAttribute("email");
-
-        // Thực hiện truy vấn để lấy profile của lecturer
+    public ResponseEntity<Object> getLecturerProfileDatas(String email) {
+        /*OAuth2User user = token.getPrincipal();
+        String email = user.getAttribute("email");*/
+        // Thực hiện truy vấn để lấy profile của student
         Map<String, Object> lecturerProfile = jdbcTemplate.queryForMap(
                 "SELECT * FROM lecturer WHERE lecturer_email = ?", email);
 
