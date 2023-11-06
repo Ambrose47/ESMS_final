@@ -27,7 +27,7 @@ public class ProfileController {
         String email = user.getAttribute("email");*/
         // Thực hiện truy vấn để lấy profile của student
         Map<String, Object> studentProfile = jdbcTemplate.queryForMap(
-                "SELECT * FROM student WHERE student_email = ?", email);
+                "SELECT * FROM Student WHERE email = ?", email);
 
         if (!studentProfile.isEmpty()) {
             return ResponseEntity.ok(studentProfile);
@@ -43,7 +43,7 @@ public class ProfileController {
         String email = user.getAttribute("email");*/
         // Thực hiện truy vấn để lấy profile của student
         Map<String, Object> lecturerProfile = jdbcTemplate.queryForMap(
-                "SELECT * FROM lecturer WHERE lecturer_email = ?", email);
+                "SELECT * FROM Lecture WHERE Email = ?", email);
 
         if (!lecturerProfile.isEmpty()) {
             return ResponseEntity.ok(lecturerProfile);

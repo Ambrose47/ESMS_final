@@ -11,10 +11,10 @@ import java.io.Serializable;
 @Setter
 @EqualsAndHashCode
 public class CourseStudentPK implements Serializable {
-    @Column(name ="course_id")
+    @Column(name ="Course_id")
     @Id
     private String courseId;
-    @Column(name = "student_id")
+    @Column(name = "Student_ID")
     @Id
 
     private String studentId;

@@ -6,16 +6,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "course_student")
+@Table(name = "Course_student")
 @IdClass(CourseStudentPK.class)
 @Getter
 @Setter
 @EqualsAndHashCode
 public class CourseStudent {
     @Id
-    @Column(name = "course_id")
+    @Column(name = "Course_id")
     private String courseId;
     @Id
-    @Column(name = "student_id")
+    @Column(name = "Student_ID")
     private String studentId;
 }
