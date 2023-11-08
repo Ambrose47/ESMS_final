@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="ESMS2@TANTUYETTT" uuid="38ace6cd-1add-40cf-b3d2-cd9469a789f5">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
@@ -13,6 +14,13 @@
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://TANTUYETTT;databaseName=ESMS_v3;encrypt=true;trustServerCertificate=true;</jdbc-url>
+=======
+    <data-source source="LOCAL" name="ESMS_v3@localhost" uuid="33561359-c4a7-4e60-bdc3-231ebf04c736">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost\MYMY:1433;database=ESMS_v3;encrypt=true;trustServerCertificate=true;loginTimeout=30;</jdbc-url>
+>>>>>>> 32d05800f86db541f41916264871bce87bb64cbd
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
