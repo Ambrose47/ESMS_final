@@ -1,7 +1,15 @@
 server:
   port: 8888
 spring:
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 352c4d2 (add_view)
+>>>>>>> 86d1dbaa4038efedc8539145582b7436bf417c55
   datasource:
 #   url: jdbc:postgresql://localhost:5432/ESMS2
 #   username: postgres
@@ -9,8 +17,27 @@ spring:
    url: jdbc:sqlserver://TANTUYETTT;databaseName=ESMS_v3;encrypt=true;trustServerCertificate=true;
    username: sa
    password: 12345
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+=======
+#  datasource:
+#   url: jdbc:postgresql://localhost:5432/ESMS
+#   username: postgres
+#   password: 1
+>>>>>>> 32d05800f86db541f41916264871bce87bb64cbd
+
+
+  datasource:
+    url: jdbc:sqlserver://localhost\MYMY:1433;database=ESMS_v3;encrypt=true;trustServerCertificate=true;loginTimeout=30;
+    username: sa
+    password: 1
+=======
+
+>>>>>>> 352c4d2 (add_view)
+>>>>>>> 86d1dbaa4038efedc8539145582b7436bf417c55
   mvc:
    view:
     prefix: /templates/
