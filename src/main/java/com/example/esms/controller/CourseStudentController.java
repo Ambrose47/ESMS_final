@@ -1,6 +1,6 @@
 package com.example.esms.controller;
 
-import com.example.esms.courseStudent.CourseStudent;
+import com.example.esms.entity.courseStudent.CourseStudent;
 import com.example.esms.service.CourseStudentService;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;

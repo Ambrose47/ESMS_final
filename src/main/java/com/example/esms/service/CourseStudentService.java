@@ -1,6 +1,6 @@
 package com.example.esms.service;
 
-import com.example.esms.courseStudent.CourseStudent;
+import com.example.esms.entity.courseStudent.CourseStudent;
 import com.example.esms.repository.CourseStudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

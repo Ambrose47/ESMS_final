@@ -1,7 +1,7 @@
 package com.example.esms.service;
 
 
-import com.example.esms.courseStudent.CourseStudent;
+import com.example.esms.entity.courseStudent.CourseStudent;
 import com.example.esms.entity.Student;
 import com.example.esms.repository.CourseStudentFullRepository;
 import com.example.esms.repository.StudentFullRepository;
