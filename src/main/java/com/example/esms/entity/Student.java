@@ -44,8 +44,8 @@ public class Student  {
     @Column(name ="email")
     private String studentEmail;
 
-    @OneToMany(mappedBy = "studentByStudentId", fetch = FetchType.EAGER)
-    private List<CourseStudent> courseStudentsbyId;
+//    @OneToMany(mappedBy = "studentByStudentId", fetch = FetchType.EAGER)
+//    private List<CourseStudent> courseStudentsbyId;
 
 
     //private int studentTerm;

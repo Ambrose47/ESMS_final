@@ -14,11 +14,13 @@ public class Course {
     @Id
     @Column(name = "id")
     private String courseId;
+    @Column(name = "name")
     private String courseName;
+    @Column(name = "Hour")
     private float courseHour;
 
-    @OneToMany(mappedBy = "courseByCourseId" )
-    private List<CourseStudent> courseStudentsbyId;
+//    @OneToMany(mappedBy = "courseByCourseId" )
+//    private List<CourseStudent> courseStudentsbyId;
 
     // getters and setters
 }

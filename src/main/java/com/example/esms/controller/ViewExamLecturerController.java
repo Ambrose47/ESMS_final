@@ -22,7 +22,7 @@ public class ViewExamLecturerController {
     }
 
     @GetMapping("/viewexamlecturer")
-    public ResponseEntity<Object> getStudentProfileData(/*String email*/) {
+    public ResponseEntity<Object> getStudentProfileData(String email) {
         /*OAuth2User user = token.getPrincipal();
         String email = user.getAttribute("email");*/
         // Thực hiện truy vấn để lấy profile của student
@@ -30,7 +30,7 @@ public class ViewExamLecturerController {
 //                "SELECT * FROM Lecture WHERE email = ?", email);
 //        String stuID = (String) lecturerProfile.get("id");
         List<Map<String, Object>> viewExamSchedule = jdbcTemplate.queryForList(
-                "select * from Exam_schedule exch inner join Exam_slot exsl on exch.slot_id = exsl.id");
+                "select * from Exam_schedule exch inner join Exam_slot exsl on exch.slot_id = exsl.id inner join Lecture le on exch.lecture_id = le.id where le.Email = ?",email);
 
         if (!viewExamSchedule.isEmpty()) {
             return ResponseEntity.ok(viewExamSchedule);

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,7 +33,7 @@ public class GenerateController {
     public GenerateController(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-    @GetMapping("/generate")
+    @GetMapping ("/generate")
     public String generate(String email) {
         generate = new Generate();
         try {
@@ -64,10 +65,10 @@ public class GenerateController {
             assert courseStudentArr != null;
 
             int totalSlot = courseStudentArr.size() / (roomArr.size()*25);
-            if (totalSlot % (roomArr.size() * 25) != 0) {
+            if (totalSlot % (roomArr.size() * 25) != 0||totalSlot==0) {
                     totalSlot++;
                 }
-            ArrayList<ExamSlot> slots = generate.generateSlot(totalSlot, "01/12/2023");
+            ArrayList<ExamSlot> slots = generate.generateSlot(totalSlot, email);
             for (ExamSlot slot :
                     slots) {
                 jdbcTemplate.update("insert into Exam_slot(id, Date, Time, Hour) values (?,?,?,?)",slot.getExamSlotId(),slot.getDate(),slot.getTime(),slot.getHour());
@@ -140,7 +141,12 @@ public class GenerateController {
                 indexExamSche++;
                 ExamSchedule examSchedule = new ExamSchedule();
                 examSchedule.setExamScheduleId(String.valueOf(indexExamSche));
-                examSchedule.setStudentId(arrStudent.get(indexStudent).getStudentId());
+                try {
+                    examSchedule.setStudentId(arrStudent.get(indexStudent).getStudentId());
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
                 indexStudent++;
                 examSchedule.setCourseId(courseArr.get(indexCourse).get("id"));
                 examSchedule.setRoomId(roomArr.get(indexRoom).get("Room"));
@@ -153,19 +159,22 @@ public class GenerateController {
                     indexRoom++;
                     indexChair = 0;
                 }
-                if (indexRoom == totalRoom) {
-                    indexSlot++;
-                    indexRoom = 0;
-                }
+
                 if (indexStudent == totalStudent) {
+                    indexRoom++;
                     indexCourse++;
                     indexStudent = 0;
+                    if(indexCourse== totalCourse) break;
                     totalStudent = courseStudentMap.get(courseArr.get(indexCourse).get("id")).size();
                     arrStudent = new ArrayList<>(courseStudentMap.get(courseArr.get(indexCourse).get("id")));
 
                 }
+                if (indexRoom == totalRoom) {
+                    indexSlot++;
+                    indexRoom = 0;
+                }
 
-            } while (!(indexSlot == totalSlot-1 && indexStudent == totalStudent-1));
+            } while (!(indexSlot == totalSlot-1 && indexStudent == totalStudent-1 && indexCourse == totalCourse-1));
             for (ExamSchedule schedule :
                     examScheduleArrayList) {
                 jdbcTemplate.update("insert into Exam_schedule(id, Room_id, slot_id, lecture_id, course_id, student_id) values (?,?,?,null,?,?)",schedule.getExamScheduleId(),schedule.getRoomId(),schedule.getSlotId(),schedule.getCourseId(),schedule.getStudentId());
