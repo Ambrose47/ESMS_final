@@ -35,7 +35,21 @@ public class SelectLectureController {
         String email = user.getAttribute("email");*/
             // Thực hiện truy vấn để lấy profile của student
             Map<String, Object> lecture = jdbcTemplate.queryForMap("SELECT * from Lecture WHERE Email = ?", emailLecture);
-            List<Map<String, String>> examSlotArr = jdbcTemplate.query("Select id,slot_id  from Exam_schedule es where lecture_id is null and slot_id = ?", new ResultSetExtractor<List<Map<String, String>>>() {
+            List<Map<String, String>> slotLecture = jdbcTemplate.query("select es.Room_id from Exam_schedule es, Lecture l where es.lecture_id = l.id and l.Email =? and es.slot_id =? group by Room_id", new ResultSetExtractor<List<Map<String, String>>>() {
+                @Override
+                public List<Map<String, String>> extractData(ResultSet rs) throws SQLException, DataAccessException {
+                    List<Map<String, String>> listRet = new ArrayList<>();
+                    while (rs.next()) {
+                        Map<String, String> mapRet = new HashMap<>();
+                        mapRet.put("Room_id", rs.getString("Room_id"));
+
+                        listRet.add(mapRet);
+                    }
+                    return listRet;
+                }
+            },emailLecture,slotId);
+            if(slotLecture.size()>0) throw new Exception("All ready select this slot");
+            List<Map<String, String>> examSlotArr = jdbcTemplate.query("Select id,slot_id,Room_id from Exam_schedule es where lecture_id is null and slot_id = ? ", new ResultSetExtractor<List<Map<String, String>>>() {
                 @Override
                 public List<Map<String, String>> extractData(ResultSet rs) throws SQLException, DataAccessException {
                     List<Map<String, String>> listRet = new ArrayList<>();
@@ -43,6 +57,8 @@ public class SelectLectureController {
                         Map<String, String> mapRet = new HashMap<>();
                         mapRet.put("id", rs.getString("id"));
                         mapRet.put("slot_id", rs.getString("slot_id"));
+                        mapRet.put("Room_id", rs.getString("Room_id"));
+
                         listRet.add(mapRet);
                     }
                     return listRet;
@@ -50,17 +66,29 @@ public class SelectLectureController {
             },slotId);
 
             if(examSlotArr!= null) {
-                jdbcTemplate.update("update Exam_schedule set lecture_id=? where id = ?", lecture.get("id"), examSlotArr.get(0).get("id"));
+                jdbcTemplate.update("update Exam_schedule set lecture_id=? where slot_id=? and Room_id =?", lecture.get("id"), examSlotArr.get(0).get("slot_id"),examSlotArr.get(0).get("Room_id"));
                 return ResponseEntity.ok("Success");
             }else {
                 return ResponseEntity.ok("FullSlot");
             }
         }
         catch (Exception e){
-            return ResponseEntity.ok("Error unknown");
+            return ResponseEntity.ok(e.getMessage());
 
         }
     }
 
+    @GetMapping("/deleteLecture")
+    public ResponseEntity<Object> deleteLectureToExamSchedule(String emailLecture,String slotId) {
+        try {
+            Map<String, Object> lecture = jdbcTemplate.queryForMap("SELECT * from Lecture WHERE Email = ?", emailLecture);
+            jdbcTemplate.update("update Exam_schedule set lecture_id = null where lecture_id = ? and slot_id =? ", lecture.get("id"), slotId);
+            return ResponseEntity.ok("Success");
+        }
+        catch (Exception e){
+            return ResponseEntity.ok(e.getMessage());
+        }
+    }
 
-}
+
+    }
