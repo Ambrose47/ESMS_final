@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="996e3748-32a2-4152-b8d6-4fc55b5573d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/GenerateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/GenerateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/ViewExamAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/ViewExamAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/ViewExamLecturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/ViewExamLecturerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/entity/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/entity/Lecturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/entity/Lecturer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/ViewExamLecturerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/ViewExamLecturerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/entity/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/entity/Course.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/entity/Lecturer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/entity/Lecturer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/entity/Student.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +42,7 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;37a37ee7ad68a6be4f170c72c16a5d37&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -103,6 +84,8 @@
       <workItem from="1699477808115" duration="193000" />
       <workItem from="1699498542862" duration="2006000" />
       <workItem from="1699507786380" duration="6386000" />
+      <workItem from="1699606446647" duration="51000" />
+      <workItem from="1699624896873" duration="1826000" />
     </task>
     <servers />
   </component>

@@ -21,7 +21,7 @@ public class ViewExamAdminController {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @GetMapping("/viewexamadmin")
+    @GetMapping("/viewexamadmin")//not use
     public ResponseEntity<Object> getStudentProfileData(/*String email*/) {
         /*OAuth2User user = token.getPrincipal();
         String email = user.getAttribute("email");*/
