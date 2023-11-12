@@ -32,7 +32,7 @@ public class RoomController {
     }
 
     @PostMapping("/uploadRoom")
-    public @ResponseBody ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
+    public /*@ResponseBody*/ ResponseEntity<String> uploadFile(/*@RequestParam("file")*/ MultipartFile file) {
         try {
             List<Room> rooms = parseExcelFile(file);
             roomService.saveAll(rooms);

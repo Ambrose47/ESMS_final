@@ -6,11 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="996e3748-32a2-4152-b8d6-4fc55b5573d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/GenerateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/GenerateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/LecturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/LecturerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/RoomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/SelectLectureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/SelectLectureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/StudenFullController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/StudenFullController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/ViewExamLecturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/esms/controller/ViewExamLecturerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/CourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/CourseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/GenerateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/LecturerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/LecturerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/RoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/RoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/SelectLectureController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/StudenFullController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/StudenFullController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/StudenFullController$Tmp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/StudenFullController$Tmp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/StudenFullController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/StudenFullController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/esms/controller/ViewExamLecturerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/esms/controller/ViewExamLecturerController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +63,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;minh&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Clone/ESMS_final&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Git/ESMS_final&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -89,21 +111,18 @@
       <workItem from="1699507786380" duration="6386000" />
       <workItem from="1699606446647" duration="51000" />
       <workItem from="1699624896873" duration="1826000" />
+      <workItem from="1699640683537" duration="7471000" />
+      <workItem from="1699649695077" duration="193000" />
+      <workItem from="1699649896901" duration="4000" />
+      <workItem from="1699672735193" duration="2244000" />
+      <workItem from="1699679368508" duration="8203000" />
+      <workItem from="1699694241285" duration="2549000" />
+      <workItem from="1699701992551" duration="1383000" />
+      <workItem from="1699762637248" duration="740000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/esms/controller/GenerateController.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

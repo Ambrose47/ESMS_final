@@ -32,7 +32,7 @@ public class LecturerController {
     }
 
     @PostMapping("/uploadLecturer")
-    public @ResponseBody ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
+    public /*@ResponseBody*/ ResponseEntity<String> uploadFile(/*@RequestParam("file")*/ MultipartFile file) {
         try {
             List<Lecturer> lecturers = parseExcelFile(file);
             lecturerService.saveAll(lecturers);

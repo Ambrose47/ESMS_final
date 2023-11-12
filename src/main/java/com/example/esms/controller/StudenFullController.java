@@ -36,9 +36,9 @@ public class StudenFullController {
     public String uploadPage() {
         return "uploadFullStudent"; // This assumes you have an uploadStudent.html in the templates folder
     }
-
+//
     @PostMapping("/uploadFullStudent")
-    public @ResponseBody ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> uploadFile(/*@RequestParam("file")*/ MultipartFile file) {
         try {
             Tmp tmp = parseExcelFile(file);
             List<Student> students = tmp.getStudentList();
@@ -52,6 +52,21 @@ public class StudenFullController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload students: " + e.getMessage());
         }
     }
+//@PostMapping("/uploadFullStudent")
+//public ResponseEntity<String> uploadFile( MultipartFile file) {
+//    try {
+//        Tmp tmp = parseExcelFile(file);
+//        List<Student> students = tmp.getStudentList();
+//        List<CourseStudent> courseStudents = tmp.getCourseStudentList();
+//        studentFullService.saveAll(students);
+//        studentFullService.saveAll(courseStudents);
+//            /*List<CourseStudent> courseStudents = parseExcelFileCourseStudent(file);
+//            courseStudentService.saveAll(courseStudents);*/
+//        return ResponseEntity.status(HttpStatus.OK).body("uploaded successfully!");
+//    } catch (Exception e) {
+//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload students: " + e.getMessage());
+//    }
+//}
     @Getter
     @Setter
     class Tmp{

@@ -8,6 +8,7 @@ import com.example.esms.entity.courseStudent.CourseStudent;
 import com.example.esms.func.Generate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -34,7 +35,7 @@ public class GenerateController {
         this.jdbcTemplate = jdbcTemplate;
     }
     @GetMapping ("/generate")
-    public String generate(String email) {
+    public ResponseEntity<String> /*String*/ generate(String email) {
         generate = new Generate();
         try {
             List<Map<String, String>> courseStudentArr = jdbcTemplate.query("Select Course_id,Student_ID from Course_student", new ResultSetExtractor<List>() {
@@ -179,7 +180,7 @@ public class GenerateController {
                     examScheduleArrayList) {
                 jdbcTemplate.update("insert into Exam_schedule(id, Room_id, slot_id, lecture_id, course_id, student_id) values (?,?,?,null,?,?)",schedule.getExamScheduleId(),schedule.getRoomId(),schedule.getSlotId(),schedule.getCourseId(),schedule.getStudentId());
             }
-            return "Success";
+            return ResponseEntity.status(HttpStatus.OK).body("Success");
         }
         catch (Exception e){
             throw e;
