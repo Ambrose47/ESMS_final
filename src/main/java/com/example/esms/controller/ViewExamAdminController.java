@@ -51,7 +51,7 @@ public class ViewExamAdminController {
 //        String stuID = (String) lecturerProfile.get("id");
         List<Map<String, Object>> viewExamMinater = jdbcTemplate.queryForList(
                 /*"select * from Exam_schedule exch inner join Exam_slot exsl on exch.slot_id = exsl.id"*/
-                "SELECT distinct es.slot_id,es.course_id,el.Date,el.Time,es.Room_id,es.lecture_id FROM [ESMS_v3].[dbo].[Exam_schedule] es inner join Exam_slot el on el.id = es.slot_id order by es.slot_id");
+                "SELECT distinct es.slot_id,es.course_id,el.Date,el.Time,es.Room_id,es.lecture_id FROM [ESMS_v3].[dbo].[Exam_schedule] es inner join Exam_slot el on el.id = es.slot_id order by el.Date");
 
         if (!viewExamMinater.isEmpty()) {
             return ResponseEntity.ok(viewExamMinater);
