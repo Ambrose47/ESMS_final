@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +37,27 @@ public class GenerateController {
         this.jdbcTemplate = jdbcTemplate;
     }
     @GetMapping ("/generate")
-    public ResponseEntity<String> /*String*/ generate(String email) {
+    public /*ResponseEntity<String>*/ String generate(String dateStart) {
+
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        // Parse the date string into a LocalDate object using the defined format
+        LocalDate insertedDate = LocalDate.parse(dateStart, formatter);
+
+        // Get today's date
+        LocalDate today = LocalDate.now();
+
+        // Compare the dates
+        if (insertedDate.isEqual(today) || insertedDate.isBefore(today) || today.isAfter(insertedDate.minusDays(4))) {
+            //return ResponseEntity.status(HttpStatus.OK).body("Insert date false");
+            return ("Insert date false");
+        }
+        jdbcTemplate.update("delete from Exam_schedule");
+        jdbcTemplate.update("delete from Exam_slot");
+
+
+
         generate = new Generate();
         try {
             List<Map<String, String>> courseStudentArr = jdbcTemplate.query("Select Course_id,Student_ID from Course_student", new ResultSetExtractor<List>() {
@@ -69,7 +91,7 @@ public class GenerateController {
             if (totalSlot % (roomArr.size() * 25) != 0||totalSlot==0) {
                     totalSlot++;
                 }
-            ArrayList<ExamSlot> slots = generate.generateSlot(totalSlot, email);
+            ArrayList<ExamSlot> slots = generate.generateSlot(totalSlot, dateStart);
             for (ExamSlot slot :
                     slots) {
                 jdbcTemplate.update("insert into Exam_slot(id, Date, Time, Hour) values (?,?,?,?)",slot.getExamSlotId(),slot.getDate(),slot.getTime(),slot.getHour());
@@ -180,7 +202,8 @@ public class GenerateController {
                     examScheduleArrayList) {
                 jdbcTemplate.update("insert into Exam_schedule(id, Room_id, slot_id, lecture_id, course_id, student_id) values (?,?,?,null,?,?)",schedule.getExamScheduleId(),schedule.getRoomId(),schedule.getSlotId(),schedule.getCourseId(),schedule.getStudentId());
             }
-            return ResponseEntity.status(HttpStatus.OK).body("Success");
+            //return ResponseEntity.status(HttpStatus.OK).body("Success");
+            return "Success";
         }
         catch (Exception e){
             throw e;
