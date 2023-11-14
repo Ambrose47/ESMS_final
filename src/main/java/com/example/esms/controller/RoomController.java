@@ -47,6 +47,9 @@ public class RoomController {
         jdbcTemplate.update("delete from Classroom");
 
         try {
+            if(jdbcTemplate.queryForList("select * from Course").isEmpty()){
+                return ResponseEntity.ok("Course null!Please up load course first!!!");
+            }
             List<Room> rooms = parseExcelFile(file);
             roomService.saveAll(rooms);
             return ResponseEntity.status(HttpStatus.OK).body("Room uploaded successfully!");
