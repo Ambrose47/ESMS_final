@@ -62,7 +62,7 @@ public class ViewExamLecturerController {
 //                "SELECT * FROM Lecture WHERE email = ?", email);
 //        String stuID = (String) lecturerProfile.get("id");
         List<Map<String, Object>> viewExamSchedule = jdbcTemplate.queryForList(
-                "SELECT distinct es.slot_id,el.Date,el.Time,el.Hour FROM [ESMS_v3].[dbo].[Exam_schedule] es inner join Exam_slot el on el.id = es.slot_id where es.lecture_id is null order by el.Date");
+                "SELECT distinct es.slot_id,el.Date,el.Time,el.Hour FROM [Exam_schedule] es inner join Exam_slot el on el.id = es.slot_id where es.lecture_id is null order by el.Date");
         List<Map<String, Object>> tmp = new ArrayList<>();
         for (Map<String, Object> vE:
         viewExamSchedule) {
