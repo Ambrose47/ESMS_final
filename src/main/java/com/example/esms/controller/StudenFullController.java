@@ -12,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,9 +37,23 @@ public class StudenFullController {
     public String uploadPage() {
         return "uploadFullStudent"; // This assumes you have an uploadStudent.html in the templates folder
     }
+
+    private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public StudenFullController(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 //
     @PostMapping("/uploadFullStudent")
     public ResponseEntity<String> uploadFile(/*@RequestParam("file")*/ MultipartFile file) {
+
+        jdbcTemplate.update("delete from Exam_schedule");
+        jdbcTemplate.update("delete from Exam_slot");
+        jdbcTemplate.update("delete from Course_student");
+        jdbcTemplate.update("delete from Student");
+
+
         try {
             Tmp tmp = parseExcelFile(file);
             List<Student> students = tmp.getStudentList();
