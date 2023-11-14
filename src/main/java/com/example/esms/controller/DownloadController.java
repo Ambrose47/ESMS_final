@@ -36,6 +36,7 @@ public class DownloadController {
         File file = new File("Data\\"+fileName.replaceAll("/","")+".zip");
         InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
         return ResponseEntity.ok()
+                .header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS,HttpHeaders.CONTENT_DISPOSITION)
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + file.getName())
                 .contentType(mediaType)
                 .contentLength(file.length()) //
