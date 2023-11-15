@@ -101,8 +101,7 @@ public class SelectLectureController {
                 return ResponseEntity.ok("Too late to delete");
             }
             Map<String, Object> lecture = jdbcTemplate.queryForMap("SELECT * from Lecture WHERE Email = ?", emailLecture);
-            List<Map<String,Object>> examSchedule = jdbcTemplate.queryForList("Select es.id from Exam_schedule es where lecture_id =? and slot_id = ?",lecture.get("id"),slotId);
-            jdbcTemplate.update("insert into Reason(examScheduleId, reason) values (?,?)",examSchedule.get(0).get("id"),reason);
+            jdbcTemplate.update("insert into Reason(reason, lecturerId, slotId) values (?,?,?)",reason,lecture.get("id"),slotId);
             jdbcTemplate.update("update Exam_schedule set lecture_id = null where lecture_id = ? and slot_id =? ", lecture.get("id"), slotId);
             return ResponseEntity.ok("Success");
         }
