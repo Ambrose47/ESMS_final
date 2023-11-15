@@ -47,6 +47,9 @@ public class LecturerController {
         jdbcTemplate.update("delete from Lecture");
 
         try {
+            if(jdbcTemplate.queryForList("select * from Course").isEmpty()){
+                return ResponseEntity.ok("Course null!Please up load course first!!!");
+            }
             List<Lecturer> lecturers = parseExcelFile(file);
             lecturerService.saveAll(lecturers);
             return ResponseEntity.status(HttpStatus.OK).body("Lecturer uploaded successfully!");

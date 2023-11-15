@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-232.9559.62">
-    <data-source name="ESMS_v3@DESKTOP-FRQCK0G" uuid="ba80d40e-2d12-4c82-b5ae-934c73c4427a">
-      <database-info product="Microsoft SQL Server" version="16.00.1105" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 12.2 for SQL Server" driver-version="12.2.0.0" dbms="MSSQL" exact-version="16.0.1105" exact-driver-version="12.2">
-        <extra-name-characters>$#@</extra-name-characters>
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>sa</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="database" qname="@">
-            <node kind="schema" qname="@" />
-          </node>
-        </introspection-scope>
-      </schema-mapping>
-    </data-source>
     <data-source name="ESMS_v2@localhost" uuid="45f18989-e356-4a6b-a2cd-9d10d5c43126">
       <database-info product="Microsoft SQL Server" version="16.00.1105" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 12.2 for SQL Server" driver-version="12.2.0.0" dbms="MSSQL" exact-version="16.0.1105" exact-driver-version="12.2">
         <extra-name-characters>$#@</extra-name-characters>

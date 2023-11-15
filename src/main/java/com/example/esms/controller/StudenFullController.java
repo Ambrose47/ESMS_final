@@ -55,6 +55,9 @@ public class StudenFullController {
 
 
         try {
+            if(jdbcTemplate.queryForList("select * from Course").isEmpty()){
+                return ResponseEntity.ok("Course null!Please up load course first!!!");
+            }
             Tmp tmp = parseExcelFile(file);
             List<Student> students = tmp.getStudentList();
             List<CourseStudent> courseStudents = tmp.getCourseStudentList();
