@@ -21,7 +21,7 @@ public class ViewExamAdminController {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @GetMapping("/viewexamadmin")
+    @GetMapping("/viewexamadmin")//not use
     public ResponseEntity<Object> getStudentProfileData(/*String email*/) {
         /*OAuth2User user = token.getPrincipal();
         String email = user.getAttribute("email");*/
@@ -30,10 +30,31 @@ public class ViewExamAdminController {
 //                "SELECT * FROM Lecture WHERE email = ?", email);
 //        String stuID = (String) lecturerProfile.get("id");
         List<Map<String, Object>> viewExamSchedule = jdbcTemplate.queryForList(
-                "select * from Exam_schedule exch inner join Exam_slot exsl on exch.slot_id = exsl.id");
+                /*"select * from Exam_schedule exch inner join Exam_slot exsl on exch.slot_id = exsl.id"*/
+                "select * from Exam_slot");
 
         if (!viewExamSchedule.isEmpty()) {
             return ResponseEntity.ok(viewExamSchedule);
+        } else {
+            // Trường hợp không tìm thấy profile hoặc địa chỉ email không phù hợp, trả về lỗi 404
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+    @GetMapping("/viewexamimater")
+    public ResponseEntity<Object> getStudentProfileData1(/*String email*/) {
+        /*OAuth2User user = token.getPrincipal();
+        String email = user.getAttribute("email");*/
+        // Thực hiện truy vấn để lấy profile của student
+//        Map<String, Object> lecturerProfile = jdbcTemplate.queryForMap(
+//                "SELECT * FROM Lecture WHERE email = ?", email);
+//        String stuID = (String) lecturerProfile.get("id");
+        List<Map<String, Object>> viewExamMinater = jdbcTemplate.queryForList(
+                /*"select * from Exam_schedule exch inner join Exam_slot exsl on exch.slot_id = exsl.id"*/
+                "SELECT distinct es.slot_id,es.course_id,el.Date,el.Time,es.Room_id,es.lecture_id FROM [ESMS_v3].[dbo].[Exam_schedule] es inner join Exam_slot el on el.id = es.slot_id order by es.slot_id");
+
+        if (!viewExamMinater.isEmpty()) {
+            return ResponseEntity.ok(viewExamMinater);
         } else {
             // Trường hợp không tìm thấy profile hoặc địa chỉ email không phù hợp, trả về lỗi 404
             return ResponseEntity.notFound().build();

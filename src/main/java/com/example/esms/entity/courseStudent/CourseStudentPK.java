@@ -1,4 +1,4 @@
-package com.example.esms.courseStudent;
+package com.example.esms.entity.courseStudent;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;

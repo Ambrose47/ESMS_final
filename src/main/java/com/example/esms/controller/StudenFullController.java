@@ -1,9 +1,8 @@
 package com.example.esms.controller;
 
-import com.example.esms.courseStudent.CourseStudent;
+import com.example.esms.entity.courseStudent.CourseStudent;
 import com.example.esms.entity.Student;
 import com.example.esms.service.StudentFullService;
-import com.example.esms.service.StudentService;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
