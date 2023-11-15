@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -80,9 +82,27 @@ public class SelectLectureController {
     }
 
     @GetMapping("/deleteLecture")
-    public ResponseEntity<Object> deleteLectureToExamSchedule(String emailLecture,String slotId) {
+    public ResponseEntity<Object> deleteLectureToExamSchedule(String emailLecture,String slotId,String reason ){
+
         try {
+            Map<String,Object> slot = jdbcTemplate.queryForMap("select Exam_slot.Date from Exam_slot where id =?",slotId);
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            // Parse the date string into a LocalDate object using the defined format
+            LocalDate insertedDate = LocalDate.parse((CharSequence) slot.get("Date"), formatter);
+
+            // Get today's date
+            LocalDate today = LocalDate.now();
+
+            // Compare the dates
+            if (insertedDate.isEqual(today) || insertedDate.isBefore(today) || today.isAfter(insertedDate.minusDays(4))) {
+                //return ResponseEntity.status(HttpStatus.OK).body("Insert date false");
+                return ResponseEntity.ok("Too late to delete");
+            }
             Map<String, Object> lecture = jdbcTemplate.queryForMap("SELECT * from Lecture WHERE Email = ?", emailLecture);
+            Map<String,Object> examSchedule = jdbcTemplate.queryForMap("Select es.id from Exam_schedule es where lecture_id =? and slot_id = ?",lecture.get("id"),slotId);
+            jdbcTemplate.update("insert into Reason(examScheduleId, reason) values (?,?)",examSchedule.get("id"),reason);
             jdbcTemplate.update("update Exam_schedule set lecture_id = null where lecture_id = ? and slot_id =? ", lecture.get("id"), slotId);
             return ResponseEntity.ok("Success");
         }
