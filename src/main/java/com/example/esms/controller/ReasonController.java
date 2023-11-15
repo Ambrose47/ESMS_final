@@ -22,7 +22,7 @@ public class ReasonController {
     @GetMapping("/reason")
     public ResponseEntity<List<Map<String,Object>>> getReason(){
         try {
-            List<Map<String, Object>> listReason = jdbcTemplate.queryForList("select L.Email,e.Date,e.Time,reason from Reason inner join dbo.Exam_schedule Es on Es.id = Reason.examScheduleId inner join dbo.Lecture L on Es.lecture_id = L.id inner join dbo.Exam_slot E on Es.slot_id = E.id");
+            List<Map<String, Object>> listReason = jdbcTemplate.queryForList("select l.Email,es.Date,es.Time,r.reason from Reason r inner join Lecture l on l.id = r.lecturerId inner join Exam_slot es on es.id = r.slotId");
             return ResponseEntity.ok(listReason);
         }
         catch (Exception e){
